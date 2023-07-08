@@ -13,7 +13,7 @@ export default function RestaurantCard({restaurant}: Props) {
       >
         <Link href={`/restaurant/${restaurant.slug}`}>
           <img
-            src={restaurant.main_image}
+            src='https://cdn.pixabay.com/photo/2015/11/19/10/38/food-1050813_1280.jpg'
             alt=""
             className="w-full h-36"
           />
