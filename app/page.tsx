@@ -5,7 +5,7 @@ import Link from 'next/link';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
-import { PrismaClient, Cuisine, Location, PRICE } from '@prisma/client';
+import { PrismaClient, Cuisine, Location, PRICE, Review } from '@prisma/client';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +19,7 @@ export interface RestaurantCardType {
   cuisine: Cuisine;
   location: Location;
   price: PRICE;
+  reviews: Review[];
 }
 
 const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
@@ -31,6 +32,7 @@ const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
       cuisine: true,
       location: true,
       price: true,
+      reviews: true
     }
   });
   return restaurants;
